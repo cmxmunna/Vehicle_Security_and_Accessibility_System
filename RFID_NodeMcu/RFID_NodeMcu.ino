@@ -42,8 +42,8 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);  //--> Create MFRC522 instance.
 #define ON_Board_LED 2  //--> Defining an On Board LED, used for indicators when the process of connecting to a wifi router
 
 //----------------------------------------SSID and Password of your WiFi router-------------------------------------------------------------------------------------------------------------//
-const char* ssid = "Uurrrraaaa";
-const char* password = "12345678#";
+const char* ssid = "123";
+const char* password = "11111111";
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 ESP8266WebServer server(80);  //--> Server on port 80
@@ -105,7 +105,7 @@ void loop() {
     //Post Data
     postData = "UIDresult=" + UIDresultSend;
 
-    String apiGetData = "http://192.168.43.210//NodeMCU-and-RFID-RC522-IoT-Projects/getUID.php";  //Specify request destination
+    String apiGetData = "http://allkeybd.com/getUID.php";  //Specify request destination
     http.begin(wifiClient, apiGetData);// get the result (**the error code**)
     http.addHeader("Content-Type", "application/x-www-form-urlencoded"); //Specify content-type header
 
