@@ -4,7 +4,7 @@
 #include <Adafruit_SH1106.h>
 #include <AM2320.h>
 
-#define RELAY_PIN  5
+#define RELAY_PIN  8
 #define OLED_RESET 4
 Adafruit_SH1106 display(OLED_RESET);
 
@@ -18,10 +18,10 @@ void setup() {
   pinMode(RELAY_PIN, OUTPUT);
   digitalWrite(RELAY_PIN, LOW); 
   pinMode(13, OUTPUT);
-  pinMode(2, INPUT);
+  pinMode(12, INPUT);
 }
 
-void loop() {
+void loop() {  
   // Display
   display.clearDisplay();
   display.setTextSize(1);
@@ -31,14 +31,14 @@ void loop() {
   display.print("====SMART Vehicle====");
   
     display.setCursor(0,15);
-    display.print("Alcohol Level = ");
+    display.print("Level(600) = ");
     display.print(sensorValue, DEC); 
     display.println("%"); 
 
 
     sensorValue = analogRead(0); // read analog input pin 0
-    digitalValue = digitalRead(2);
-  if (sensorValue > 400)
+    digitalValue = digitalRead(12);
+  if (sensorValue > 600)
   { 
     digitalWrite(RELAY_PIN, HIGH); 
     digitalWrite(13, HIGH);
@@ -59,6 +59,6 @@ void loop() {
     display.println("Engine 'ON'"); 
     //digitalWrite(RELAY_PIN, LOW); 
   }
-  
+ 
    display.display();
-}
+} 

@@ -13,7 +13,7 @@ String command;             //String to store app command state.
 int speedCar = 800;         // 400 - 1023.
 int speed_Coeff = 3;
 
-const char* ssid = "Vehicle Security Agent";
+const char* ssid = "Public Transport Women Safety";
 ESP8266WebServer server(80);
 
 void setup() {
@@ -45,6 +45,7 @@ void setup() {
 void goAhead(){ 
 
       digitalWrite(IN_1, HIGH);
+      delay(10000);
       digitalWrite(IN_2, LOW);
       analogWrite(ENA, speedCar);
 

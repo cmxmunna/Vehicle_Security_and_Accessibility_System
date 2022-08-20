@@ -43,7 +43,7 @@ void loop()
   int flame_value = digitalRead(flame_sensor_pin);
   
   //The fire is detected, trigger Alarm and send sms
-  if(flame_value == LOW)
+  if(flame_value == HIGH)
   {
     if(fire_flag == 0)
     {
@@ -65,7 +65,7 @@ void send_multi_sms()
 {
   if(PHONE_1 != ""){
     Serial.print("Phone 1: ");
-    send_sms("Fire Alert! Vehicle Reg. No: Dhaka Metro LA-18-6750", PHONE_1);
+    send_sms("Women Harassment Alert! Vehicle Reg. No: Dhaka Metro GHA- XX-XXXX. Take Action Immediately.", PHONE_1);
   }
   if(PHONE_2 != ""){
     Serial.print("Phone 2: ");
