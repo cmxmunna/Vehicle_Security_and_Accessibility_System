@@ -59,6 +59,7 @@ void loop()
   {
     fire_flag = 0;
   }
+  delay(10000);
 }
 
 void send_multi_sms()
